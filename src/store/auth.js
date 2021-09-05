@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { login as loginApi } from '../api/auth'
+import axios from 'axios'
 
 const initialState = {
   user: null, // ユーザー情報の格納場所
-  isLogin: false,
 }
 
 const slice = createSlice({
@@ -11,10 +11,11 @@ const slice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action) => {
-      return Object.assign({}, state, { user: action.payload, isLogin: true })
+      console.log('set state action:', state)
+      return Object.assign({}, state, { user: action.payload })
     },
     signOut: (state, action) => {
-      return Object.assign({}, state, { user: null, isLogin: false })
+      return Object.assign({}, state, { user: null })
     },
   },
 })
@@ -22,15 +23,22 @@ const slice = createSlice({
 export default slice.reducer
 
 // 認証済みか確認するセレクター
-export const isAuthSelector = (state) => state.auth.user !== null
+export const isAuthSelector = (state) => {
+  return state.auth.user !== null
+}
 
 // ログイン機能
 export function login(username, password) {
   return async function (dispatch) {
-    const user = await loginApi(username, password)
-    console.log('set user:', user)
-    // ログイン後にユーザー情報をストアに格納する
-    dispatch(slice.actions.setUser(user))
+    //const user = await loginApi(username, password)
+    let body = { email: username, password: password }
+    axios
+      .post('https://localhost:5001/api/account/login', body)
+      .then(async (response) => {
+        localStorage.setItem('TOKEN', response.data.token);
+        // ログイン後にユーザー情報をストアに格納する
+        dispatch(slice.actions.setUser(response.data))
+      })
   }
 }
 
