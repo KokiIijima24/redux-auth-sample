@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { login as loginApi } from '../api/auth'
 import axios from 'axios'
 
 const initialState = {
@@ -14,7 +13,7 @@ const slice = createSlice({
       console.log('set state action:', state)
       return Object.assign({}, state, { user: action.payload })
     },
-    signOut: (state, action) => {
+    signOut: (state) => {
       return Object.assign({}, state, { user: null })
     },
   },
@@ -43,8 +42,8 @@ export function login(username, password) {
 }
 
 // サインアウト
-export function signout() {
+export function logout() {
   return async function (dispatch) {
-    dispatch(slice.action.signOut())
+    dispatch(slice.actions.signOut([]))
   }
 }
