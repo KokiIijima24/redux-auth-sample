@@ -17,7 +17,7 @@ function HeaderMenu() {
       <Link to='/'>Home</Link> | <Link to='/login'>Login</Link> |{' '}
       <Link to='/mypage'>MyPage</Link>
       <button onClick={(e) => signout(e)}>Logout</button>
-      <Link>{user.displayName}</Link>
+      {/* <Link>{user.displayName}</Link> */}
     </nav>
   )
 }
