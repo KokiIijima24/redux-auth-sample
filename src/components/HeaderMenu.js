@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { logout, isAuthSelector } from '../store/auth'
 
-function HeaderMenu() {
+const HeaderMenu = () => {
   const isAuth = useSelector(isAuthSelector)
   const dispatch = useDispatch()
   const user = useSelector((state) => state.auth.user)
