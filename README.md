@@ -11,3 +11,6 @@ https://tailwindcss.com/docs/guides/create-react-app
 
 アイコン
 https://heroicons.com/
+
+レイアウトコンポーネントの作成方法
+https://gist.github.com/avinmathew/e82fe7e757b20cb337d5219e0ab8dc2c

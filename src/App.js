@@ -6,11 +6,15 @@ import { PersistGate } from 'redux-persist/integration/react'
 import store, { persistor } from './store/'
 import PrivateRoute from './components/PrivateRoute'
 import GuestRoute from './components/GuestRoute'
+import AppRoute from './components/AppRoute'
 
-import HeaderMenu from './components/HeaderMenu'
 import Home from './Pages/Home'
 import Login from './Pages/Login'
 import MyPage from './Pages/MyPage'
+
+import LoginLayout from './Layout/LoginLayout'
+import MainLayout from './Layout/MainLayout'
+
 
 
 function App() {
@@ -18,11 +22,10 @@ function App() {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
-          <HeaderMenu />
           <Switch>
-            <Route path='/' exact children={<Home />} />
-            <GuestRoute path='/login' children={<Login />} />
-            <PrivateRoute path='/mypage' children={<MyPage />} />
+            <AppRoute path='/' exact layout={MainLayout} component={Home} />
+            <GuestRoute path='/login' layout={LoginLayout} component={Login} />
+            <PrivateRoute path='/mypage' layout={MainLayout} component={MyPage} />
           </Switch>
         </BrowserRouter>
       </PersistGate>

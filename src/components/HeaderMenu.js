@@ -56,12 +56,18 @@ function HeaderMenu() {
           >
             Home
           </Link>
-          <Link
-            to='/mypage'
-            className='block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'
-          >
-            MyPage
-          </Link>
+          {() => {
+            if (isAuth) {
+              return (
+                <Link
+                  to='/mypage'
+                  className='block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'
+                >
+                  MyPage
+                </Link>
+              )
+            }
+          }}
         </div>
         <div>
           {(() => {

@@ -1,13 +1,23 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { isAuthSelector } from "../store/auth";
+import React from 'react'
+import { Route, Redirect } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { isAuthSelector } from '../store/auth'
 
-function PrivateRoute(props) {
-  const isAuth = useSelector(isAuthSelector);
+const PrivateRoute = ({ component: Component, layout: Layout, ...rest }) => {
+  const isAuth = useSelector(isAuthSelector)
 
-  // 渡された props をそのまま Route に設定する
-  return isAuth ? <Route {...props} /> : <Redirect to="/login" />;
+  return isAuth ? (
+    <Route
+      {...rest}
+      render={(props) => (
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      )}
+    />
+  ) : (
+    <Redirect to='/login' />
+  )
 }
 
-export default PrivateRoute;
+export default PrivateRoute

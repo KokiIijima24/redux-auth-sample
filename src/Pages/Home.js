@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { baseRepository } from '../api/auth'
 import { isAuthSelector } from '../store/auth'
 
-export default function Home() {
+const Home = () => {
   //const user_info = useSelector((state) => state.user)
   const isAuth = useSelector(isAuthSelector);
 
@@ -23,3 +23,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
