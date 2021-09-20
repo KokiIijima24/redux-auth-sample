@@ -4,9 +4,9 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 
 import store, { persistor } from './store/'
-import PrivateRoute from './components/PrivateRoute'
-import GuestRoute from './components/GuestRoute'
-import AppRoute from './components/AppRoute'
+import PrivateRoute from './components/Router/PrivateRoute'
+import GuestRoute from './components/Router/GuestRoute'
+import AppRoute from './components/Router/AppRoute'
 
 import Home from './Pages/Home'
 import Login from './Pages/Login'

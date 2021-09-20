@@ -1,13 +1,14 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { isAuthSelector } from '../store/auth'
+import { isAuthSelector } from '../../store/auth'
 
-const PrivateRoute = ({ component: Component, layout: Layout, ...rest }) => {
+const GuestRoute = ({ component: Component, layout: Layout, ...rest }) => {
   const isAuth = useSelector(isAuthSelector)
   console.log('rest;', rest)
-
   return isAuth ? (
+    <Redirect to='/' />
+  ) : (
     <Route
       {...rest}
       render={(props) => (
@@ -16,9 +17,7 @@ const PrivateRoute = ({ component: Component, layout: Layout, ...rest }) => {
         </Layout>
       )}
     />
-  ) : (
-    <Redirect to='/login' />
   )
 }
 
-export default PrivateRoute
+export default GuestRoute
