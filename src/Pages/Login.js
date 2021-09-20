@@ -8,13 +8,16 @@ import Spinner from '../components/Spinner'
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const history = useHistory()
   const dispatch = useDispatch()
 
   const submit = async () => {
-    await dispatch(login(username, password))
+    setIsLoading(true)
     history.push('/mypage')
+    await dispatch(login(username, password))
+    setIsLoading(false)
   }
 
   return (
@@ -56,7 +59,8 @@ const Login = () => {
         </div>
         <div className='flex items-center justify-between'>
           <button
-            className='bg-blue-600 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded'
+            className={'bg-blue-600 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded'
+          + (isLoading ? ' cursor-not-allowed opacity-50' : '')}
             type='submit'
           >
             Sign In
