@@ -1,25 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { baseRepository } from '../api/auth'
 import { isAuthSelector } from '../store/auth'
 
 const Home = () => {
   //const user_info = useSelector((state) => state.user)
-  const isAuth = useSelector(isAuthSelector);
+  const isAuth = useSelector(isAuthSelector)
+  const [users, setUsers] = useState([])
 
   if (!isAuth) {
-    console.log(isAuthSelector)
     return <div>test</div>
   }
 
-  baseRepository
-    .get('weatherforecast')
-    .then((response) => console.log(response))
+  useEffect(() => {
+    baseRepository.get('api/user/list').then((response) => {
+      setUsers(response.data)
+    })
+  }, [])
+
+  console.log('users:', users)
 
   return (
     <div>
-      <h1>test</h1>
       <h1>Home</h1>
+      <h3>ユーザーリスト</h3>
+      <ul>
+        {users.map((user) => {
+          return <li key={user.id}>{user.displayName}</li>
+        })}
+      </ul>
     </div>
   )
 }
