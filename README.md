@@ -1,3 +1,5 @@
+![example workflow](https://github.com/koki-2424/redux-auth-sample/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+
 ## 認証機能実装時の参考
 
 Storeの永続化
