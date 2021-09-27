@@ -32,7 +32,7 @@ export function login(username, password) {
     //const user = await loginApi(username, password)
     let body = { email: username, password: password }
     axios
-      .post('https://localhost:5001/api/account/login', body)
+      .post('https://givook.azurewebsites.net/api/account/login', body)
       .then(async (response) => {
         localStorage.setItem('TOKEN', response.data.token);
         // ログイン後にユーザー情報をストアに格納する
