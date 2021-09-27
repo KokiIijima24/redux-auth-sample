@@ -1,4 +1,4 @@
-![example workflow](https://github.com/koki-2424/redux-auth-sample/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+![example workflow](https://github.com/koki-2424/redux-auth-sample/actions/workflows/azure-static-web-apps-witty-sky-036e07200.yml/badge.svg)
 
 ## 認証機能実装時の参考
 
