@@ -10,7 +10,6 @@ const slice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action) => {
-      console.log('set state action:', state)
       return Object.assign({}, state, { user: action.payload })
     },
     signOut: (state) => {
@@ -38,7 +37,7 @@ export function login(username, password) {
         // ログイン後にユーザー情報をストアに格納する
         dispatch(slice.actions.setUser(response.data))
       })
-  }
+  }　　　　　　　　　　　　　　　　　　　　　　　　　
 }
 
 // サインアウト
