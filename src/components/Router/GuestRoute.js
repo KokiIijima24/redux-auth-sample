@@ -4,11 +4,7 @@ import { useSelector } from 'react-redux'
 import { isAuthSelector } from '../../store/auth'
 
 const GuestRoute = ({ component: Component, layout: Layout, ...rest }) => {
-  const isAuth = useSelector(isAuthSelector)
-  console.log('rest;', rest)
-  return isAuth ? (
-    <Redirect to='/' />
-  ) : (
+  return (
     <Route
       {...rest}
       render={(props) => (

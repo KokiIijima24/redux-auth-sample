@@ -20,6 +20,7 @@ const Home = () => {
 
   useEffect(() => {
     baseRepository.get('api/user/list').then((response) => {
+      console.log('response data:', response)
       setUsers(response.data)
     })
   }, [])
