@@ -14,9 +14,10 @@ import MyPage from './Pages/MyPage'
 
 import LoginLayout from './Layout/LoginLayout'
 import MainLayout from './Layout/MainLayout'
+import Chapter3 from './Pages/Chapter3'
 
 
-
+　　　　　　　　　　　　　　　　　　　　　
 function App() {
   return (
     <Provider store={store}>
@@ -26,6 +27,7 @@ function App() {
             <AppRoute path='/' exact layout={MainLayout} component={Home} />
             <GuestRoute path='/login' layout={LoginLayout} component={Login} />
             <PrivateRoute path='/mypage' layout={MainLayout} component={MyPage} />
+            <GuestRoute path='/chapter3' layout={MainLayout} component={Chapter3} />
           </Switch>
         </BrowserRouter>
       </PersistGate>

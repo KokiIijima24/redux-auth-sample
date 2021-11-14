@@ -65,6 +65,13 @@ const HeaderMenu = () => {
             >
               MyPage
             </Link>
+
+            <Link
+              to='/chapter3'
+              className='block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'
+            >
+              chapter3
+            </Link>
           </div>
           <div>
             <button
