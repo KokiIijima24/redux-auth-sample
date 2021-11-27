@@ -10,12 +10,12 @@ import AppRoute from './components/Router/AppRoute'
 
 import Home from './Pages/Home'
 import Login from './Pages/Login'
-import MyPage from './Pages/MyPage'
+import About from './Pages/About'
 
 import LoginLayout from './Layout/LoginLayout'
 import MainLayout from './Layout/MainLayout'
 import Chapter3 from './Pages/Chapter3'
-import Chapter4 from './Pages/Chapter4'
+import chapter6 from './Pages/Chapter6'
 
 
 　　　　　　　　　　　　　　　　　　　　　
@@ -27,9 +27,9 @@ function App() {
           <Switch>
             <AppRoute path='/' exact layout={MainLayout} component={Home} />
             <GuestRoute path='/login' layout={LoginLayout} component={Login} />
-            <PrivateRoute path='/mypage' layout={MainLayout} component={MyPage} />
+            <PrivateRoute path='/about' layout={MainLayout} component={About} />
             <GuestRoute path='/chapter3' layout={MainLayout} component={Chapter3} />
-            <GuestRoute path='/chapter4' layout={MainLayout} component={Chapter4} />
+            <GuestRoute path='/chapter6' layout={MainLayout} component={chapter6} />
           </Switch>
         </BrowserRouter>
       </PersistGate>

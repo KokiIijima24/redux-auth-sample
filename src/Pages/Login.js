@@ -15,7 +15,7 @@ const Login = () => {
 
   const submit = async () => {
     setIsLoading(true)
-    history.push('/mypage')
+    history.push('/about')
     await dispatch(login(username, password))
     setIsLoading(false)
   }
