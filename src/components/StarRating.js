@@ -9,9 +9,7 @@ const Star = ({ selected = false, onSelect = (f) => f }) => {
   )
 }
 
-function StarRating({ totalStars = 5 }) {
-  const [selectedStars, setSelectedStars] = useState(0)
-
+function StarRating({ totalStars = 5, selectedStars = 0, onRate = (f) => f }) {
   return (
     <div>
       <div className='justify-center'>
@@ -20,7 +18,7 @@ function StarRating({ totalStars = 5 }) {
             <Star
               key={i}
               selected={selectedStars > i}
-              onSelect={() => setSelectedStars(i + 1)}
+              onSelect={() => onRate(i + 1)}
             />
           ))}
         </ul>
