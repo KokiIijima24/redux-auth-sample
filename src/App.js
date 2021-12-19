@@ -16,6 +16,8 @@ import LoginLayout from './Layout/LoginLayout'
 import MainLayout from './Layout/MainLayout'
 import Chapter3 from './Pages/Chapter3'
 import chapter6 from './Pages/Chapter6'
+import chapter7 from './Pages/Chapter7'
+import chapter8 from './Pages/Chapter8'
 
 
 　　　　　　　　　　　　　　　　　　　　　
@@ -30,6 +32,8 @@ function App() {
             <PrivateRoute path='/about' layout={MainLayout} component={About} />
             <GuestRoute path='/chapter3' layout={MainLayout} component={Chapter3} />
             <GuestRoute path='/chapter6' layout={MainLayout} component={chapter6} />
+            <GuestRoute path='/chapter7' layout={MainLayout} component={chapter7} />
+            <GuestRoute path='/chapter8' layout={MainLayout} component={chapter8} />
           </Switch>
         </BrowserRouter>
       </PersistGate>

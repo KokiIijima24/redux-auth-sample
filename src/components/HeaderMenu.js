@@ -78,6 +78,18 @@ const HeaderMenu = () => {
             >
               chapter6
             </Link>
+            <Link
+              to='/chapter7'
+              className='block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'
+            >
+              chapter7
+            </Link>
+            <Link
+              to='/chapter8'
+              className='block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'
+            >
+              chapter8
+            </Link>
           </div>
           <div>
             <button
