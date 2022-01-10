@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderMenu from '../components/HeaderMenu'
+import HeaderMenu from '../components/Common/HeaderMenu'
 
 const MainLayout = props => {
 

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { login } from '../store/auth'
 
-import Spinner from '../components/Spinner'
+import Spinner from '../components/Utils/Spinner'
 
 const Login = () => {
   const [username, setUsername] = useState('')

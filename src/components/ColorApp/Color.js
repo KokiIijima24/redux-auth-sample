@@ -1,5 +1,5 @@
 import React from 'react'
-import StarRating from './StarRating'
+import StarRating from '../Utils/StarRating'
 import { FaTrash } from 'react-icons/fa'
 
 function Color({

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useFetch from '../components/Utils/useFetch'
+import { useFetch } from '../hooks'
 
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'

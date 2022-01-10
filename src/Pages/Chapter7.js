@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import CheckBox from '../components/CheckBox'
+import CheckBox from '../components/Utils/CheckBox'
 
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import ColorList from '../components/ColorList'
-import AddColorForm from '../components/AddColorForm'
+import ColorList from '../components/ColorApp/ColorList'
+import AddColorForm from '../components/ColorApp/AddColorForm'
 import {v4} from 'uuid'
 
 import ReactMarkdown from 'react-markdown'
