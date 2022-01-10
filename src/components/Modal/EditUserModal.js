@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { baseRepository } from '../../api/auth'
-import InputField from '../InputForm'
+import InputField from '../Utils/InputForm'
 
 function EditUserModal() {
   const [showEditModal, setShowEditModal] = useState(false)
