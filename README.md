@@ -1,5 +1,11 @@
 ![example workflow](https://github.com/koki-2424/redux-auth-sample/actions/workflows/azure-static-web-apps-witty-sky-036e07200.yml/badge.svg)
 
+## アプリケーションの起動まで
+
+[dotnet-identity-sample
+](https://github.com/koki-2424/dotnet-identity-sample)
+をクローンして起動する
+
 ## 認証機能実装時の参考
 
 Storeの永続化
